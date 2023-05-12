@@ -11,7 +11,9 @@ export function Counter({}: CounterProps) {
   return (
     <form>
       {path.includes("/sub") && <input hidden readOnly name="_redirect" />}
-      <button formAction={increment}>Increment</button>
+      <button formAction={increment}>
+        Increment {path.includes("/sub") && "redirect"}
+      </button>
     </form>
   );
 }
